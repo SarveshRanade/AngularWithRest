@@ -1,0 +1,107 @@
+<div class="container">
+  <form class="form-horizontal" [formGroup]="empform" (ngSubmit)="OnSubmit()">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3>Enter Details</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group"
+          [ngClass]="{'has-error':empform.get('fname').errors && (empform.get('fname').touched || empform.get('fname').dirty)}">
+          <label class="col-sm-2" for="fname">First Name
+            <label class="required">*</label>
+          </label>
+          <div class="col-sm-8">
+            <input id="fname" type="text" class="form-control" formControlName="fname"
+              (keydown.space)="$event.preventDefault()" maxlength="10">
+            <span class="help-block"
+              *ngIf="empform.get('fname').errors && (empform.get('fname').touched || empform.get('fname').dirty)">
+              <span *ngIf="empform.get('fname').errors.required"> Name is Required</span>
+              <span *ngIf="empform.get('fname').errors.minlength ||empform.get('fname').errors.maxlength">
+                Min length is 2 and Max is 10
+              </span>
+            </span>
+            <!-- *ngIf="eform.get('name').errors && eform.get('name').touched || eform.get('name').dirty" -->
+          </div>
+
+        </div>
+        <div class="form-group"
+          [ngClass]="{'has-error':empform.get('lname').errors && (empform.get('lname').touched || empform.get('lname').dirty)}">
+          <label class="col-sm-2" for="lname">Last Name
+            <label class="required">*</label>
+          </label>
+          <div class="col-sm-8">
+            <input id="email" type="text" class="form-control" formControlName="lname"
+              (keydown.space)="$event.preventDefault()" maxlength="10">
+
+            <span class="help-block"
+              *ngIf="empform.get('lname').errors && (empform.get('lname').touched || empform.get('lname').dirty)">
+              <span *ngIf="empform.get('lname').errors.required"> Last Name is Required</span>
+              <span *ngIf="empform.get('lname').errors.minlength ||empform.get('lname').errors.maxlength">
+                Min length is 2 and Max is 10
+              </span>
+              <!-- <span *ngIf="eform.get('email').errors.email"> Enter Correct Email</span> -->
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group"
+          [ngClass]="{'has-error':empform.get('mobile').errors && (empform.get('mobile').touched || empform.get('mobile').dirty)}">
+          <label class="col-sm-2" for="mobile">Mobile
+            <label class="required">*</label>
+          </label>
+
+          <div class="col-sm-8">
+
+            <input id="mobile" type="text" class="form-control" formControlName="mobile"
+              (keydown.space)="$event.preventDefault()" maxlength="10"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57" ondragstart="return false;"
+              ondrop="return false;">
+            <span class="help-block"
+              *ngIf="empform.get('mobile').errors && (empform.get('mobile').touched || empform.get('mobile').dirty)">
+              <span *ngIf="empform.get('mobile').errors.required"> Mobile Number is Required</span>
+              <span *ngIf="empform.get('mobile').errors.minlength ||empform.get('mobile').errors.maxlength">
+                Mobile no should be of 10 digit
+              </span>
+              <span *ngIf="empform.get('mobile').pattern"> Enter Valid Number</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group"
+          [ngClass]="{'has-error':empform.get('email').errors && (empform.get('email').touched || empform.get('email').dirty)&& f.email.errors}">
+          <label class="col-sm-2" for="name">Email
+            <label class="required">*</label>
+          </label>
+          <div class="col-sm-8">
+            <input id="email" type="text" class="form-control" formControlName="email"
+              (keydown.space)="$event.preventDefault()">
+
+            <span class="help-block"
+              *ngIf="empform.get('email').errors && (empform.get('email').touched || empform.get('email').dirty)">
+              <span *ngIf="empform.get('email').errors.required"> Email is Required</span>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </span>
+          </div>
+        </div>
+        <div class="form-group"
+          [ngClass]="{'has-error':empform.get('date').errors && (empform.get('date').touched || empform.get('date').dirty)&& f.email.errors}">
+          <label class="col-sm-2" for="date">Date
+            <label class="required">*</label>
+          </label>
+
+          <div class="col-sm-8">
+            <input type="date" formControlName="date" id="date123" (keydown.space)="$event.preventDefault()"
+              class="form-control">
+            <span class="help-block"
+              *ngIf="empform.get('date').errors && (empform.get('date').touched || empform.get('date').dirty)">
+              <span *ngIf="empform.get('date').errors.required"> Date is Required</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class=" panel-footer">
+        <button class="btn btn-primary" type="submit">Save </button>
+      </div>
+    </div>
+  </form>
+</div>

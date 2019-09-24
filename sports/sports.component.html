@@ -1,0 +1,82 @@
+<div class="container">
+
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile</th>
+            <th>Email Id</th>
+            <th>Date</th>
+            <th>Menu</th>
+        </tr>
+
+        <tr *ngFor="let sp of sportsDetails ; let i=index">
+            <th>{{i+1}}</th>
+            <th>{{sp.id}}</th>
+            <th>{{sp.fname}}</th>
+            <th>{{sp.lname}}</th>
+            <th>{{sp.mobile}}</th>
+            <th>{{sp.email}}</th>
+            <th>{{sp.date}}</th>
+            <th>
+                <button class="btn-danger" (click)="OnDelete(sp.id)">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    Delete</button>
+
+            </th>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+<!-- <form class="form-horizontal" [formGroup]="eform" (ngSubmit)="OnSubmit()">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Enter Details</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group"
+                [ngClass]="{'has-error':eform.get('name').errors && (eform.get('name').touched || eform.get('name').dirty)}">
+                <label class="col-sm-2" for="name">Name</label>
+                <div class="col-sm-8">
+                    <input id="name" type="text" class="form-control" formControlName="name"
+                        (keydown.space)="$event.preventDefault()">
+                    <span class="help-block"
+                        *ngIf="eform.get('name').errors && (eform.get('name').touched || eform.get('name').dirty)">
+                        <span *ngIf="eform.get('name').errors.required"> Name is Required</span>
+                        <span *ngIf="eform.get('name').errors.minlength ||eform.get('name').errors.maxlength"> Min
+                            Min length is 2 and Max is 10
+                        </span>
+                    </span>
+                   *ngIf="eform.get('name').errors && eform.get('name').touched || eform.get('name').dirty" 
+                </div>
+            </div>
+            <div class="form-group"
+                [ngClass]="{'has-error':eform.get('email').errors && (eform.get('email').touched || eform.get('email').dirty)&& f.email.errors}">
+                <label class="col-sm-2" for="name">Email</label>
+                <div class="col-sm-8">
+                    <input id="email" type="text" class="form-control" formControlName="email"
+                        (keydown.space)="$event.preventDefault()">
+
+                    <span class="help-block"
+                        *ngIf="eform.get('email').errors && (eform.get('email').touched || eform.get('email').dirty)">
+                        <span *ngIf="eform.get('email').errors.required"> Email is Required</span>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                         <span *ngIf="eform.get('email').errors.email"> Enter Correct Email</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary" type="submit">Save </button>
+        </div>
+    </div>
+</form> -->

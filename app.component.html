@@ -1,0 +1,133 @@
+<div style="text-align:center">
+  <h1>
+    Welcome
+  </h1>
+</div>
+
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-primary" style=" align-self: auto;">
+  <a class="navbar-brand" routerLink="/">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sports">Sports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/forms">Form</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Dropdown
+        </a>
+        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" routerLink="/">Action</a>
+          <a class="dropdown-item" routerLink="/">Another action</a>
+          <a class="dropdown-item" routerLink="/">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light">
+          <i class="fab fa-google-plus-g"></i>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <i class="fas fa-user"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" routerLink="#">Action</a>
+          <a class="dropdown-item" routerLink="#">Another action</a>
+          <a class="dropdown-item" routerLink="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Vertical navbar  -->
+<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center">
+      <div class="media-body">
+        <h4 class="m-0">Title</h4>
+        <p class="font-weight-light text-muted mb-0"></p>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a routerLink="/" class="nav-link text-dark font-italic bg-light">
+        <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+        Home
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/" class="nav-link text-dark font-italic">
+        <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+        About
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+        Services
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/" class="nav-link text-dark font-italic">
+        <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+        Gallery
+      </a>
+    </li>
+  </ul>
+
+  <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a routerLink="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+        Area charts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+        Bar charts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+        Pie charts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+        Line charts
+      </a>
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
